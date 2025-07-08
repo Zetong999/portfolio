@@ -1,20 +1,25 @@
 // components/project.tsx
+import Link from 'next/link';
 import  Image from 'next/image';
+
 type ProjectCardProps = {
   imageSrc: string;
   title: string;
   tag?: string;
   description: string;
+  link: string; // Optional link prop
 };
 
-export default function ProjectCard({ imageSrc, title, tag, description }: ProjectCardProps) {
+export default function ProjectCard({ imageSrc, title, tag, description,link }: ProjectCardProps) {
+  console.log('link prop:', link); // Debugging line to check the link prop
   return (
+     <Link href={link || '/test'} passHref>
     <div className="bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 cursor-pointer rounded-lg p-6 flex items-center space-x-6">
       <Image
   src={imageSrc}
   alt={title}
-  width={80}
-  height={80}
+  width={160}
+  height={90}
   className="object-contain"
 />
 
@@ -31,5 +36,7 @@ export default function ProjectCard({ imageSrc, title, tag, description }: Proje
         <p className="text-gray-600">{description}</p>
       </div>
     </div>
+      </Link>
+    
   );
 }
