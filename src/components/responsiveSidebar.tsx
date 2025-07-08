@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Drawer, DrawerItems } from "flowbite-react"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaGitlab } from "react-icons/fa6";
+
 import { FaGithub } from "react-icons/fa";
 import { usePathname } from 'next/navigation'
 import clsx from "clsx";
@@ -80,15 +80,30 @@ export default function ResponsiveSidebarComponent() {
 
 
         <div className=" flex justify-center gap-6 mb-[20px]">
-        <FaGithub className="cursor-pointer"/>
-        <FaGitlab className="cursor-pointer"/>
-          <FaLinkedinIn className="cursor-pointer"/>
+          <a
+    href="https://github.com/Zetong999"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cursor-pointer text-black hover:text-gray-600"
+  >
+    <FaGithub size={20} />
+  </a>
 
-        </div>
-      </div>
+  
+
+  <a
+    href="https://www.linkedin.com/in/zetong-liu-237216266"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cursor-pointer text-black hover:text-gray-600"
+  >
+    <FaLinkedinIn size={20}/>
+  </a>
+</div>
+     </div>
 
     </Sidebar>
-  )
+  );
 
   return (
     <>
