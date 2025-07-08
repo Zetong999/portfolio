@@ -7,7 +7,7 @@ export default function HomePage() {
       <h1 className="text-3xl font-bold mb-8">Welcome to My Portfolio</h1>
 
       <p className="mb-6 italic">
-        AI, Data and Open Source is the future, and I'm here to share my journey with you.
+        AI, Data and Open Source is the future, and I am here to share my journey with you.
       </p>
 
       <div className="space-x-4">

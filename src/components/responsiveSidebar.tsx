@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Drawer, DrawerItems } from "flowbite-react"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaGitlab } from "react-icons/fa6";
+
 import { FaGithub } from "react-icons/fa";
 import { usePathname } from 'next/navigation'
 import clsx from "clsx";
