@@ -10,7 +10,7 @@ type BlogCardProps = {
 };
 
 export default function BlogCard({ imageSrc, title, tag, description, tags, link }: BlogCardProps) {
-  console.log('link prop:', link); // Debugging line to check the link prop
+ 
   return (
     <Link href={link || '/blogs/test'} passHref>
     <div className="bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 cursor-pointer rounded-lg p-6 flex items-center space-x-6 border-b border-gray-200 last:border-b">
@@ -35,7 +35,7 @@ export default function BlogCard({ imageSrc, title, tag, description, tags, link
         <p className="text-gray-600">{description}</p>
 
         <div className="flex justify-end space-x-2 mt-4">
-          {tags.map((tagItem, index) => (
+          {tags?.map((tagItem, index) => (
             <button
               key={index}
               className="border px-2 py-1 rounded"

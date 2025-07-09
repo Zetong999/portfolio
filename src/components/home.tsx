@@ -1,7 +1,7 @@
 import ProjectCard from '@/components/project';
 import BlogCard from '@/components/blog';
 
-export default function Home() {
+export default function Home({blogData}: {blogData: any}) {
   const projects = [
     {
       imageSrc: '/envex-logo.png',
@@ -19,32 +19,15 @@ export default function Home() {
     },
   ];
 
-  const blogs = [
-    {
-      imageSrc: '/cat1.png',
-      title: 'Debug Linux With Systemctl',
-      tag: 'Latest',
-      description: 'Debugging issues with systemctl on Arch Linux.',
-      tags: ['Arch Linux', 'Happy Share'],
-      link: '/blogs/debug',
-    },
-    {
-      imageSrc: '/cat2.png',
-      title: 'Secure your Arch Linux with Wazuh',
-      
-      description: 'Secure your Arch Linux system with Wazuh, a free, open-source security monitoring platform.',
-      tags: ['Happy Share', 'Arch Linux'],
-      link: '/blogs/secure',
-    },
-    {
-      imageSrc: '/cat3.png',
-      title: 'LangChain Conversational Memory Comparison',
-     
-      description: 'Comparison of different memory types in LangChain for better conversational AI experiences.',
-      tags: ['AI', 'LLM', 'LangChain'],
-      link: '/blogs/langchain',
-    },
-  ];
+  const blogs = blogData?.edges?.map(({ node }: any) => ({
+    imageSrc: node.featuredImage?.node?.sourceUrl ?? '/default-image.png',
+    title: node.title,
+    tag: node.tags?.nodes?.[0]?.name ?? '',
+    description: node.seo?.metaDesc ?? '',
+    link: `/blogs/${node.slug}`,
+  }));
+
+  console.log('blogsblogsblogs', blogs)
 
   return (
     <div className= "mt-10 ">
@@ -72,7 +55,7 @@ export default function Home() {
 </section>
       <h2 className="text-2xl font-bold mb-6">Latest Blog Posts</h2>
       <div className="space-y-6">
-        {blogs.map((blog, index) => (
+        {blogs.map((blog: any, index: number) => (
             <div key={index}>
           <BlogCard
             
