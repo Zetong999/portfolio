@@ -1,7 +1,10 @@
 import Home from '@/components/home';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
-export default function HomePage() {
+import { getBlogForHome } from '@/graphqlApi';
+export default async function HomePage() {
+  
+  const blogPostsData = await getBlogForHome()
+  console.log('blogPostsData===>', blogPostsData.edges[0].node)
   return (
     <div className="p-10 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Welcome to My Portfolio</h1>
@@ -31,7 +34,8 @@ export default function HomePage() {
           <FaLinkedin className="ml-2" /> {/* logo 在文字后面 */}
         </a>
       </div>
-      <Home />
+      <Home blogData= {blogPostsData} />
     </div>
   );
 }
+

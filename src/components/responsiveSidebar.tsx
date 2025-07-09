@@ -15,10 +15,10 @@ export default function ResponsiveSidebarComponent() {
   const pathname = usePathname()
   const sidebarContent = (
     <Sidebar aria-label="Sidebar nav"
-      // className="h-full 
+      // className="h-screen"
       // [&>div]:bg-[rgb(0.961151 0 0)]
       //  [&>div]:p-0"
-      className="h-full 
+      className="h-screen flex flex-col
   [&>div]:bg-[rgb(0.961151 0 0)]
      [&>div]:p-0
     [&>div]:rounded-none
@@ -26,8 +26,8 @@ export default function ResponsiveSidebarComponent() {
 
 
     >
-      <div className="flex flex-col
-    justify-between h-screen">
+      <div className="flex flex-col h-full
+    justify-between">
         <div>
           <div className="flex flex-wrap gap-2 mt-[50px]">
             <Avatar img="/avatar.avif" alt="avatar of Jese" size="xl" rounded className="mx-auto" />
@@ -123,7 +123,7 @@ export default function ResponsiveSidebarComponent() {
         className="p-0 w-[256px]"
         open={open} onClose={() => setOpen(false)} position="left">
         {/* <DrawerHeader title="Menu" /> */}
-        <DrawerItems className="h-screen w-[256px] ">
+        <DrawerItems className="h-full w-[256px] ">
 
           {sidebarContent}
 
@@ -131,7 +131,7 @@ export default function ResponsiveSidebarComponent() {
       </Drawer>
 
       {/* 大屏固定 Sidebar */}
-      <div className="hidden sm:block h-screen ">
+      <div className="hidden sm:block fixed h-screen ">
         {sidebarContent}
       </div>
     </>
