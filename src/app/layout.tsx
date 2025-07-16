@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ResponsiveSidebarComponent from "@/components/responsiveSidebar";
-import PrelineInit from "@/components/PrelineInit"; 
+import PrelineInit from "@/components/PrelineInit";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,9 +31,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <PrelineInit /> {/* ✅ 添加 PrelineInit */}
-        <div className=" sm:flex sm:flex-row" id="kkkkkk">
-            <ResponsiveSidebarComponent/>
-            {children}
+        <div className=" flex flex-col sm:flex-row min-h-screen " >
+          <ResponsiveSidebarComponent />
+          <main className="sm:ml-[256px] flex justify-center">
+  <div className="w-full max-w-4xl px-4">
+    {children}
+  </div>
+</main>
+
         </div>
       </body>
     </html>

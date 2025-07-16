@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'zetongportfolio.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'secure.gravatar.com',
+        pathname: '/**',
+      },
     ],
   },
   /* config options here */
