@@ -24,10 +24,11 @@ export default function Home({blogData}: {blogData: any}) {
     title: node.title,
     tag: node.tags?.nodes?.[0]?.name ?? '',
     description: node.seo?.metaDesc ?? '',
-    link: `/blogs/${node.slug}`,
+    link: `/blogs/article/${node.slug}`,
   }));
 
-  console.log('blogsblogsblogs', blogs)
+  
+
 
   return (
     <div className= "mt-10 ">

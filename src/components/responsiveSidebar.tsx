@@ -10,7 +10,10 @@ import { FaGithub } from "react-icons/fa";
 import { usePathname } from 'next/navigation'
 import clsx from "clsx";
 import Link from 'next/link';
+
+
 export default function ResponsiveSidebarComponent() {
+
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const sidebarContent = (
@@ -18,11 +21,10 @@ export default function ResponsiveSidebarComponent() {
       // className="h-screen"
       // [&>div]:bg-[rgb(0.961151 0 0)]
       //  [&>div]:p-0"
-      className="h-screen flex flex-col
+      className={`h-screen fixed flex flex-col
   [&>div]:bg-[rgb(0.961151 0 0)]
      [&>div]:p-0
-    [&>div]:rounded-none
-     "
+    [&>div]:rounded-none`}
 
 
     >
@@ -55,7 +57,7 @@ export default function ResponsiveSidebarComponent() {
                    className={clsx('hover:bg-gray-200 rounded-none', {
                     'bg-gray-100': pathname === '/blogs'
                 })}
-                href="/blogs">
+                href="/blogs/1">
                 Blogs
               </SidebarItem>
               <SidebarItem
@@ -131,7 +133,7 @@ export default function ResponsiveSidebarComponent() {
       </Drawer>
 
       {/* 大屏固定 Sidebar */}
-      <div className="hidden sm:block fixed h-screen ">
+      <div className="hidden sm:block h-screen ">
         {sidebarContent}
       </div>
     </>

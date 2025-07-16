@@ -11,7 +11,6 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ imageSrc, title, tag, description,link }: ProjectCardProps) {
-  console.log('link prop:', link); // Debugging line to check the link prop
   return (
      <Link href={link || '/test'} passHref>
     <div className="bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 cursor-pointer rounded-lg p-6 flex items-center space-x-6">
