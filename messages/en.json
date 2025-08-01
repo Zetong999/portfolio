@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Welcome to My Portfolio",
+    "about": "AI, Data and Open Source is the future, and I am here to share my journey with you.",
+    "buttons": {
+        "github": "GitHub",
+        "linkedIn": "LinkedIn"
+    },
+    "projectSectionName": "Latest Projects",
+    "blogSectionName": "Latest Blog Posts"
+  },
+
+    "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unbekannt}}"
+  }
+}

@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import withFlowbiteReact from "flowbite-react/plugin/nextjs";
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
   images: {
@@ -19,4 +20,6 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default withFlowbiteReact(nextConfig);
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+export default withFlowbiteReact(withNextIntl(nextConfig));
