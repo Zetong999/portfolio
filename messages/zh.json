@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "欢迎来到我的作品集",
+    "about": "AI、数据与开源是未来，我在这里与你分享我的旅程。",
+    "buttons": {
+      "github": "GitHub",
+      "linkedIn": "领英"
+    },
+    "projectSectionName": "最新项目",
+    "blogSectionName": "最新博客文章"
+  },
+
+    "LocaleSwitcher": {
+    "label": "选择语言",
+    "locale": "{locale, select, zh {🇨🇳 中国} en {🇺🇸 英国} other {其他}}"
+  }
+}
